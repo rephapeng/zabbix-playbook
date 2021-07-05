@@ -1,0 +1,5 @@
+mysql_root_password: MySQL_R00t
+mysql_database_zabbix: zabbix
+mysql_user: zabbix
+mysql_password: Z4bbix_passw0rd
+zabbix_image: zabbix/zabbix-server-mysql:ubuntu-5.0.1

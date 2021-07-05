@@ -1,0 +1,17 @@
+- name: check zabbix-server folder
+  stat: path=/opt/zabbix-server
+  register: zabbix_server_folder
+
+- name: create zabbix-server folder
+  command: >
+    mkdir /opt/zabbix-server
+  when: not zabbix_server_folder.stat.exists
+
+- name: create zabbix docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/zabbix-server/docker-compose.yml
+
+- name: running docker-compose
+  command: >
+     docker-compose -f /opt/zabbix-server/docker-compose.yml up -d 

@@ -1,0 +1,8 @@
+- hosts: hosts
+  become: yes
+  vars:
+    zbx_srv: 127.0.0.1
+    ubuntu18_link: https://repo.zabbix.com/zabbix/4.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.4-1+bionic_all.deb
+    ubuntu18_file: zabbix-release_4.4-1+bionic_all.deb
+  roles:
+    - zabbix-agent
